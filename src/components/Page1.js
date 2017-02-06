@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-
-var initialState = {
-  	certificates:[1,2,3],
-  	year:1992
-};
+import Certificate from './Certificate';
 
 class Page1 extends Component {
 	constructor(props) {
 	    super(props);
-	    this.state = initialState;
-
+	    this.state = this.props.dataForStep1;
+	    console.log(this.state);
 	    this.handleChange = this.handleChange.bind(this);
 	    this.handleSubmit = this.handleSubmit.bind(this);
   	}
@@ -28,43 +24,14 @@ class Page1 extends Component {
     render() {
     	return (
 			<div className='page1'>
-				<form className='form-group' onSubmit={this.handleSubmit}>
-					<h3>Additional Courses/Certeficates</h3>
-						<div>
-							<label>
-							Year of beggining :
-								<input type="text" className='form-control' value={this.state.year} onChange={this.handleChange}/>
-							</label>
-						</div>
-						<div>
-							<label>
-							Duration of Education :
-								<input type="text" className='form-control' />
-							</label>
-						</div>
-						<div>
-							<label>
-							Course Name :
-								<input type="text" className='form-control' />
-							</label>
-						</div>
-						<div>
-							<label>
-							School Name :
-								<input type="text" className='form-control' />
-							</label>
-						</div>
-						<div>
-							<label >
-							Location :
-								<input type="text" className='form-control' />
-							</label>
-						</div>
-						<button type="submit" className="btn btn-primary" >Submit</button>
-						<button  className="btn btn-danger">Clear Values</button>
-						<button  className="btn">Add form</button>
-					</form>
-
+				{ this.state.certificates.map((element, i) => {
+					return <Certificate
+						key={i} 
+						elementData={element}
+						/>;
+					}) 
+				}
+				
 					<form className='form-group'>
 						<h3>Professional Experience</h3>
 						<div>
@@ -113,6 +80,7 @@ class Page1 extends Component {
 						<button  className="btn btn-danger">Clear Values</button>
 						<button  className="btn"> Add form </button>
 					</form>
+				}
 				</div>
 		);
 	}
