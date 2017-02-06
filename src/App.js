@@ -5,6 +5,7 @@ import Page1 from './components/Page1';
 
 let allDataState = {
     step1:{ certificates:[{
+        id:0,
         year:1992,
         duration: 3,
         courseName: "",
@@ -32,7 +33,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Page1 dataForStep1={this.state.step1}/>
+        <Page1 dataForStep1={this.state.step1} />
       </div>
     );
   }

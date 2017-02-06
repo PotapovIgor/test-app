@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Certificate from './Certificate';
+import App from '../App.js';
 
 class Page1 extends Component {
 	constructor(props) {
@@ -8,11 +10,17 @@ class Page1 extends Component {
 	    console.log(this.state);
 	    this.handleChange = this.handleChange.bind(this);
 	    this.handleSubmit = this.handleSubmit.bind(this);
+	    this.addForm = this.addForm.bind(this);
   	}
 
-	handleChange(event) {
-		console.log(event.target.value);
-		this.setState({year: event.target.value});
+	handleChange(name, value, id) {
+		console.log(name, value, id,);
+		var newProp = {[name]:value};
+		const certificates = this.state.certificates;
+		certificates[id][name] = value;
+
+
+		this.setState({certificates:certificates});
 	}
 
 	handleSubmit(event) {
@@ -20,19 +28,35 @@ class Page1 extends Component {
 	    event.preventDefault();
 	}
 
+	addForm(event){
+		console.log('add form');
+		this.state.certificates.push({year:"",duration:""});
+		ReactDOM.render(
+  			<App />,
+  			document.getElementById('root')
+		);
+
+	}
+
 	// state = initialState
     render() {
     	return (
 			<div className='page1'>
 				{ this.state.certificates.map((element, i) => {
-					return <Certificate
-						key={i} 
+					element.id=i;
+					return <div key={i}>
+					<Certificate name={i}
+					onChange={this.handleChange}
 						elementData={element}
-						/>;
+						/>
+						<input  type="button" className="btn btn-danger" value="Remove" />
+						</div>;
 					}) 
 				}
+				<button type="submit" className="btn btn-primary" onClick={this.handleSubmit}>Submit</button>
+				<input type="button" className="btn" onClick={this.addForm} value="Add form" />
 				
-					<form className='form-group'>
+				<form className='form-group'>
 						<h3>Professional Experience</h3>
 						<div>
 							<label>
@@ -79,8 +103,7 @@ class Page1 extends Component {
 						<button type="submit" className="btn btn-primary" >Submit</button>
 						<button  className="btn btn-danger">Clear Values</button>
 						<button  className="btn"> Add form </button>
-					</form>
-				}
+				</form>
 				</div>
 		);
 	}
