@@ -35,19 +35,19 @@ class Certificate extends Component {
 						<div>
 							<label>
 							Course Name :
-								<input type="text" className='form-control' />
+								<input type="text" name="courseName" className='form-control' value={this.props.elementData.courseName} onChange={this.handleChange}/>
 							</label>
 						</div>
 						<div>
 							<label>
 							School Name :
-								<input type="text" className='form-control' />
+								<input type="text" name="schoolName" className='form-control' value={this.props.elementData.schoolName} onChange={this.handleChange}/>
 							</label>
 						</div>
 						<div>
 							<label >
 							Location :
-								<input type="text" className='form-control' />
+								<input type="text" name="location" className='form-control' value={this.props.elementData.location} onChange={this.handleChange}/>
 							</label>
 						</div>
 
