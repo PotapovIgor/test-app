@@ -25,7 +25,7 @@ class Experience extends Component {
     render() {
         return (
             <form className='form-group'>
-                <h3>Professional Experience</h3>
+                
                 <div>
                     <label>
                         Year of beggining :
