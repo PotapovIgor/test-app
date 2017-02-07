@@ -19,7 +19,7 @@ class Certificate extends Component {
 	render() {
 		return (
 			<form className='form-group'>
-					<h3>Additional Courses/Certeficates</h3>
+					<h3>Additional Courses/Certificates</h3>
 						<div>
 							<label>
 							Year of begining :

@@ -12,7 +12,16 @@ let allDataState = {
             schoolName: "",
             location: ""
         }],
-        experience: [] }
+        experience: [{
+            id:"",
+            year:"",
+            duration:"",
+            jobTitle:"",
+            companyName:"",
+            location:"",
+            contractType:"",
+            majorTask:""
+        }] }
 };
 
 class App extends Component {
