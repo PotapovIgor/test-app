@@ -59,7 +59,12 @@ class Experience extends Component {
                 <div>
                     <label>
                         Contract Type :
-                        <input name="contractType" type="text" className='form-control' value={this.props.elementData.contractType} onChange={this.handleChange}/>
+                        <select name="contractType" className="form-control" value={this.props.elementData.contractType} onChange={this.handleChange}>
+                            <option value="CDD">CDD</option>
+                            <option value="Stage">Stage</option>
+                            <option value="CDI">CDI</option>
+                            <option value="Alternance">Alternance</option>
+                        </select>
                     </label>
                 </div>
                 <div>

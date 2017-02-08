@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Certificate from './Certificate';
 import Experience from './Experience';
 
-//Experience data={ this.state.allFormsStuff }
-
 class Page1 extends Component {
 	constructor(props) {
 	    super(props);
@@ -46,13 +44,12 @@ class Page1 extends Component {
 	    event.preventDefault();
 	}
 
-	addFormC(event){
+	addFormC(event){ 
 		console.log('add form');
 		this.setState(state => {
 			state.certificates.push({year:"",duration:"",courseName: "", schoolName: "", location:""});
 			return {certificates: state.certificates};
 		});
-		
 	}
 	
 	addFormE(event){
@@ -61,7 +58,7 @@ class Page1 extends Component {
 			state.experience.push({year:"",duration:"",jobTitle:"", companyName:"", location:"", contractType:"", majorTask:""});
 			return {experience: state.experience};
 		});
-
+    
 	}
 	removeFormC(event){
 		console.log('remove form');
@@ -89,8 +86,8 @@ class Page1 extends Component {
 				<h3>Additional Courses/Certificates</h3>
 				<div>{ this.state.certificates.map((element, formIndex) => {
 						element.id=formIndex;
-						return <div key={formIndex++}>
-							<h5>Tab #{formIndex}</h5>
+						return <div key={formIndex}>
+							<h4>Tab #{element.id}</h4>
 						<Certificate name={formIndex}
 						onChange={this.handleChangeC}
 							elementData={element}
@@ -108,8 +105,8 @@ class Page1 extends Component {
 					<h3>Professional Experience</h3>
 					{ this.state.experience.map((element, formIndex) => {
 						element.id=formIndex;
-						return <div key={formIndex++}>
-							<h5>Tab #{formIndex}</h5>
+						return <div key={formIndex}>
+							<h4>Tab #{element.id}</h4>
 							<Experience name={formIndex}
 										onChange={this.handleChangeE}
 										elementData={element}
