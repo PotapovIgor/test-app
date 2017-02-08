@@ -19,16 +19,14 @@ class Experience extends Component {
         console.log(event.target.value);
         this.props.onChange(event.target.name, event.target.value, this.props.elementData.id);
     }
-
-
-
+    
     render() {
         return (
             <form className='form-group'>
                 
                 <div>
                     <label>
-                        Year of beggining :
+                        Year of begining :
                         <input name="year" type="text" className='form-control' value={this.props.elementData.year} onChange={this.handleChange}/>
                     </label>
                 </div>
@@ -57,8 +55,7 @@ class Experience extends Component {
                     </label>
                 </div>
                 <div>
-                    <label>
-                        Contract Type :
+                    <label>Contract Type :
                         <select name="contractType" className="form-control" value={this.props.elementData.contractType} onChange={this.handleChange}>
                             <option value="CDD">CDD</option>
                             <option value="Stage">Stage</option>

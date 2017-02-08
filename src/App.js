@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Page1 from './components/Page1/Page1';
 import Page2 from './components/Page2/Page2';
+import Page3 from './components/Page3/Page3';
+import Page4 from './components/Page4/Page4';
+
 
 let allDataState = {
     step1:{
@@ -34,7 +37,24 @@ let allDataState = {
             category:""
         }]
     },
-    step3:{ hobbies:[{}], trips:[{}], socActivs:[{}] },
+    step3:{
+        hobbies:[{ 
+            typeOfHobby:"",
+            description:""
+        }],
+        trips:[{
+            cityName:"",
+            year:"",
+            duration:"",
+            typeActivity:""
+        }],
+        socActivs:[{
+            typeOfActivity:"",
+            duration:"",
+            description:"",
+            responsibilities:""
+        }]
+    },
     step4:{ myKeyWords:[{}], myLinks:[{}] }
 };
 
@@ -49,6 +69,8 @@ class App extends Component {
         <div className="App">
             <Page1 dataForStep1={this.state.step1} />
             <Page2 dataForStep2={this.state.step2} />
+            <Page3 dataForStep3={this.state.step3} />
+            <Page4 />
         </div>
         );
     }

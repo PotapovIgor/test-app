@@ -7,7 +7,7 @@ class Page2 extends Component{
     constructor(props) {
         super(props);
         this.state = this.props.dataForStep2;
-        console.log(this.state);
+        //console.log(this.state);
         this.handleSubmit = this.handleSubmit.bind(this);
 
         this.handleChange = this.handleChange.bind(this);
@@ -36,7 +36,7 @@ class Page2 extends Component{
     }
     
     addForm(event){
-        console.log('add form');
+        //console.log('add form');
         this.setState(state => {
             state.skills.push({typeOfSkill:"", description:"", levelInStars: ""});
             return {skills: state.skills};
@@ -44,9 +44,9 @@ class Page2 extends Component{
     }
 
     removeForm(event){
-        console.log('remove form');
+        //console.log('remove form');
         var formIndex = parseInt(event.target.value, 10);
-        console.log('remove form: %d', formIndex, this.state.skills[formIndex]);
+        //console.log('remove form: %d', formIndex, this.state.skills[formIndex]);
         this.setState(state => {
             state.skills.splice(formIndex, 1);
             return {skills: state.skills};
@@ -54,15 +54,15 @@ class Page2 extends Component{
     }
 
     handleChangeD(name, value, id) {
-        console.log(name, value, id,);
+        console.log(name, value, id);
         const drivingLicenses = this.state.drivingLicenses;
         drivingLicenses[id][name] = value;
-
+    
         this.setState({
             drivingLicenses:drivingLicenses
         });
     }
-
+    
     addFormD(event){
         console.log('add form');
         this.setState(state => {
@@ -70,7 +70,7 @@ class Page2 extends Component{
             return {drivingLicenses: state.drivingLicenses};
         });
     }
-
+    
     removeFormD(event){
         console.log('remove form');
         var formIndex = parseInt(event.target.value, 10);
