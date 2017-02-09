@@ -19,40 +19,31 @@ class Certificate extends Component {
 	render() {
 		return (
 			<form className='form-group'>
+				<div>
+					<label htmlFor="year">Year of begining :
+						<input name="year" type="text" className='form-control' value={this.props.elementData.year} onChange={this.handleChange}/>
+					</label>
 					
-						<div>
-							<label>
-							Year of begining :
-								<input name="year" type="text" className='form-control' value={this.props.elementData.year} onChange={this.handleChange}/>
-							</label>
-						</div>
-						<div>
-							<label>
-							Duration of Education :
-								<input name="duration" type="text" className='form-control' value={this.props.elementData.duration} onChange={this.handleChange}/>
-							</label>
-						</div>
-						<div>
-							<label>
-							Course Name :
-								<input type="text" name="courseName" className='form-control' value={this.props.elementData.courseName} onChange={this.handleChange}/>
-							</label>
-						</div>
-						<div>
-							<label>
-							School Name :
-								<input type="text" name="schoolName" className='form-control' value={this.props.elementData.schoolName} onChange={this.handleChange}/>
-							</label>
-						</div>
-						<div>
-							<label >
-							Location :
-								<input type="text" name="location" className='form-control' value={this.props.elementData.location} onChange={this.handleChange}/>
-							</label>
-						</div>
+					<label htmlFor="duration">Duration of Education :
+						<input name="duration" type="text" className='form-control' value={this.props.elementData.duration} onChange={this.handleChange}/>
+					</label>
 
+					<label htmlFor="courseName">Course Name :
+						<input type="text" name="courseName" className='form-control' value={this.props.elementData.courseName} onChange={this.handleChange}/>
+					</label>
+					
+				</div>
 
-					</form>
+				<div>
+					<label htmlFor="schoolName">School Name :
+						<input type="text" name="schoolName" className='form-control' value={this.props.elementData.schoolName} onChange={this.handleChange}/>
+					</label>
+					<label htmlFor="location">Location :
+						<input type="text" name="location" className='form-control' value={this.props.elementData.location} onChange={this.handleChange}/>
+					</label>
+					
+				</div>
+			</form>
 	  	);
 	  }
 	}

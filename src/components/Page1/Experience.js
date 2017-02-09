@@ -29,14 +29,10 @@ class Experience extends Component {
                         Year of begining :
                         <input name="year" type="text" className='form-control' value={this.props.elementData.year} onChange={this.handleChange}/>
                     </label>
-                </div>
-                <div>
                     <label>
                         Duration :
                         <input name="duration" type="text" className='form-control' value={this.props.elementData.duration} onChange={this.handleChange}/>
                     </label>
-                </div>
-                <div>
                     <label>
                         Job title :
                         <input name="jobTitle" type="text" className='form-control' value={this.props.elementData.jobTitle} onChange={this.handleChange}/>
@@ -47,14 +43,10 @@ class Experience extends Component {
                         Company name :
                         <input name="companyName" type="text" className='form-control' value={this.props.elementData.companyName} onChange={this.handleChange}/>
                     </label>
-                </div>
-                <div>
                     <label>
                         Location :
                         <input name="location" type="text" className='form-control' value={this.props.elementData.location} onChange={this.handleChange}/>
                     </label>
-                </div>
-                <div>
                     <label>Contract Type :
                         <select name="contractType" className="form-control" value={this.props.elementData.contractType} onChange={this.handleChange}>
                             <option value="CDD">CDD</option>

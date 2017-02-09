@@ -2,12 +2,31 @@ import React, { Component } from 'react';
 import Hobby from './Hobby';
 import TripAndOverseas from './TripAndOverseas';
 import SocActiv from './SocActiv';
+import { browserHistory } from 'react-router';
 
 class Page3 extends Component{
 
     constructor(props) {
         super(props);
-        this.state = this.props.dataForStep3;
+        //this.state = this.props.dataForStep3;
+        this.state = {
+            hobbies:[{
+                typeOfHobby:"",
+                description:""
+            }],
+            trips:[{
+                cityName:"",
+                year:"",
+                duration:"",
+                typeActivity:""
+            }],
+            socActivs:[{
+                typeOfActivity:"",
+                duration:"",
+                description:"",
+                responsibilities:""
+            }]
+        };
         console.log(this.state);
         this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -26,6 +45,9 @@ class Page3 extends Component{
 
     handleSubmit(event) {
         alert('A name was submitted: ' + JSON.stringify(this.state));
+        const path = '/page4';
+        console.log(path);
+        browserHistory.push(path);
         event.preventDefault();
     }
 

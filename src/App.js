@@ -55,7 +55,15 @@ let allDataState = {
             responsibilities:""
         }]
     },
-    step4:{ myKeyWords:[{}], myLinks:[{}] }
+    step4:{ 
+        myKeyWords:[{
+            keyWords:''
+        }],
+        myLinks:[{
+            service:'',
+            url:''
+        }]
+    }
 };
 
 class App extends Component {
@@ -64,13 +72,14 @@ class App extends Component {
       super(props);
       this.state = allDataState;
     }
+    
     render() {
         return (
-        <div className="App">
+        <div className="App container">
             <Page1 dataForStep1={this.state.step1} />
             <Page2 dataForStep2={this.state.step2} />
             <Page3 dataForStep3={this.state.step3} />
-            <Page4 />
+            <Page4 dataForStep4={this.state.step4}/>
         </div>
         );
     }

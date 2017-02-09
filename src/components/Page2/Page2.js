@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import Skill from './Skill';
 import DrivingLicense from './DrivingLicense';
+import { browserHistory } from 'react-router';
 
 class Page2 extends Component{
 
     constructor(props) {
         super(props);
-        this.state = this.props.dataForStep2;
+        //this.state = this.props.dataForStep2;
+        this.state = {
+            skills:[{
+                typeOfSkill:"",
+                description:"",
+                levelInStars:""
+            }],
+            drivingLicenses:[{
+                vehicleType:"",
+                category:""
+            }]
+        };
         //console.log(this.state);
         this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -22,6 +34,9 @@ class Page2 extends Component{
     handleSubmit(event) {
         alert('A name was submitted: ' + JSON.stringify(this.state));
         // this.setState({ allFormsStuff: JSON.stringify(this.state )});
+        const path = '/page3';
+        console.log(path);
+        browserHistory.push(path);
         event.preventDefault();
     }
 

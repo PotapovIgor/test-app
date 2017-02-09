@@ -8,6 +8,12 @@ class Skill extends Component{
         console.log(this.state);
         this.handleChange = this.handleChange.bind(this);
     }
+    //
+    // componentWillReceiveProps(props){
+    //     this.state = {
+    //         stuff: props.data
+    //     }
+    // }
 
     handleChange(event) {
         console.log(event.target.value);

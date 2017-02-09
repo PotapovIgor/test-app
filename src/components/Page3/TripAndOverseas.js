@@ -22,20 +22,16 @@ class TripAndOverseas extends Component{
                         <label htmlFor="cityName">City name
                         <input name="cityName" className="form-control" type="text" value={this.props.elementData.cityName} onChange={this.handleChange}/>
                         </label>
-                    </div>
-                    <div>
                         <label htmlFor="year">Year
-                        <input name="year" className="form-control" type="text" value={this.props.elementData.year} onChange={this.handleChange}/>
+                            <input name="year" className="form-control" type="text" value={this.props.elementData.year} onChange={this.handleChange}/>
                         </label>
                     </div>
                     <div>
                         <label htmlFor="duration">Duration in week
                         <input name="duration" className="form-control" type="number" value={this.props.elementData.duration} onChange={this.handleChange}/>
                         </label>
-                    </div>
-                    <div>
                         <label htmlFor="typeActivity">Type of activity
-                        <input name="typeActivity" className="form-control" type="text" value={this.props.elementData.typeActivity} onChange={this.handleChange}/>
+                            <input name="typeActivity" className="form-control" type="text" value={this.props.elementData.typeActivity} onChange={this.handleChange}/>
                         </label>
                     </div>
                 </form>

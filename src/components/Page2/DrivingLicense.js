@@ -26,10 +26,8 @@ class DrivingLicense extends Component {
                             <option value="motorcycle">Motorcycle</option>
                         </select>
                         </label>
-                    </div>
-                    <div>
                         <label htmlFor="category">Category
-                        <input name="category" className="form-control" type="text" value={this.props.elementData.category} onChange={this.handleChange}/>
+                            <input name="category" className="form-control" type="text" value={this.props.elementData.category} onChange={this.handleChange}/>
                         </label>
                     </div>
                 </form>

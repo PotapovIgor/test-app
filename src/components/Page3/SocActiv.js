@@ -23,20 +23,16 @@ class SocActiv extends Component{
                         <label>Type of activity
                         <input name="typeOfActivity" className="form-control" type="text" value={this.props.elementData.typeOfActivity} onChange={this.handleChange}/>
                         </label>
-                    </div>
-                    <div>
                         <label>Duration in years
-                        <input name="duration" className="form-control" type="number" value={this.props.elementData.duration} onChange={this.handleChange}/>
+                            <input name="duration" className="form-control" type="number" value={this.props.elementData.duration} onChange={this.handleChange}/>
+                        </label>
+                        <label>Responsibilities/Achievements
+                            <input name="responsibilities" className="form-control" type="text" value={this.props.elementData.responsibilities} onChange={this.handleChange}/>
                         </label>
                     </div>
                     <div>
                         <label>Description of activity
                         <textarea name="description" className="form-control" type="text" value={this.props.elementData.description} onChange={this.handleChange}/>
-                        </label>
-                    </div>
-                    <div>
-                        <label>Responsibilities/Achievements
-                        <input name="responsibilities" className="form-control" type="text" value={this.props.elementData.responsibilities} onChange={this.handleChange}/>
                         </label>
                     </div>
                 </form>
